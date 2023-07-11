@@ -2,6 +2,8 @@ package com.softwaredevelopment.socialnetworkapp.entity;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
 @Table(name="account")
 public class User {
@@ -30,6 +32,13 @@ public class User {
 
     @Column(name="active")
     private int active;
+
+    @ManyToMany(fetch = FetchType.LAZY)
+    @JoinTable(name="account_role",
+                joinColumns = @JoinColumn(name = "account_id"),
+                inverseJoinColumns = @JoinColumn(name = "role"))
+    private List<Role> roles;
+
 
     public User() {
     }
@@ -107,5 +116,13 @@ public class User {
 
     public void setActive(int active) {
         this.active = active;
+    }
+
+    public List<Role> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(List<Role> roles) {
+        this.roles = roles;
     }
 }
