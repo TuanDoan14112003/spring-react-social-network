@@ -1,4 +1,4 @@
-package com.softwaredevelopment.socialnetworkapp.dao;
+package com.softwaredevelopment.socialnetworkapp.repositories;
 
 import com.softwaredevelopment.socialnetworkapp.entity.Role;
 import org.springframework.data.jpa.repository.JpaRepository;
