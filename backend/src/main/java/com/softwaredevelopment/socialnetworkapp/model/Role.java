@@ -1,8 +1,6 @@
-package com.softwaredevelopment.socialnetworkapp.entity;
+package com.softwaredevelopment.socialnetworkapp.model;
 
 import jakarta.persistence.*;
-
-import java.util.List;
 
 @Entity
 @Table(name="role")
