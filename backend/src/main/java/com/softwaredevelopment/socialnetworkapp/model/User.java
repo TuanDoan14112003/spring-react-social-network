@@ -1,7 +1,8 @@
-package com.softwaredevelopment.socialnetworkapp.entity;
+package com.softwaredevelopment.socialnetworkapp.model;
 
 import jakarta.persistence.*;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @Entity
@@ -28,10 +29,10 @@ public class User {
     private String lastName;
 
     @Column(name="dob")
-    private String dob;
+    private LocalDate dob;
 
     @Column(name="active")
-    private int active;
+    private boolean active;
 
     @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(name="account_role",
@@ -43,7 +44,7 @@ public class User {
     public User() {
     }
 
-    public User(String email, String username, String password, String firstName, String lastName, String dob, int active) {
+    public User(String email, String username, String password, String firstName, String lastName, LocalDate dob, boolean active) {
         this.email = email;
         this.username = username;
         this.password = password;
@@ -53,6 +54,11 @@ public class User {
         this.active = active;
     }
 
+    public User(String email, String username, String password) {
+        this.email = email;
+        this.username = username;
+        this.password = password;
+    }
 
     public long getId() {
         return id;
@@ -102,19 +108,19 @@ public class User {
         this.lastName = lastName;
     }
 
-    public String getDob() {
+    public LocalDate getDob() {
         return dob;
     }
 
-    public void setDob(String dob) {
+    public void setDob(LocalDate dob) {
         this.dob = dob;
     }
 
-    public int getActive() {
+    public boolean getActive() {
         return active;
     }
 
-    public void setActive(int active) {
+    public void setActive(boolean active) {
         this.active = active;
     }
 

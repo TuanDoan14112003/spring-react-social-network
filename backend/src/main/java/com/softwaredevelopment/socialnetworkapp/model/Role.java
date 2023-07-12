@@ -8,7 +8,7 @@ import java.util.List;
 @Table(name="role")
 public class Role {
     @Id
-    @Column(name = "role")
+    @Column(name = "role_name")
     private String roleName;
 
 
