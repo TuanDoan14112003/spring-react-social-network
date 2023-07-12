@@ -1,6 +1,6 @@
 package com.softwaredevelopment.socialnetworkapp.repositories;
 
-import com.softwaredevelopment.socialnetworkapp.entity.User;
+import com.softwaredevelopment.socialnetworkapp.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
