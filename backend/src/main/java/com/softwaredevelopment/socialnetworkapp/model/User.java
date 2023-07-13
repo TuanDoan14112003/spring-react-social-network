@@ -1,5 +1,6 @@
 package com.softwaredevelopment.socialnetworkapp.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -63,6 +64,7 @@ public class User implements UserDetails {
         this.email = email;
         this.username = username;
         this.password = password;
+        this.active = true;
     }
 
     public long getId() {
@@ -84,36 +86,36 @@ public class User implements UserDetails {
     public String getUsername() {
         return username;
     }
-
+    @JsonIgnore
     @Override
     public boolean isAccountNonExpired() {
         return true;
     }
-
+    @JsonIgnore
     @Override
     public boolean isAccountNonLocked() {
         return true;
     }
-
+    @JsonIgnore
     @Override
     public boolean isCredentialsNonExpired() {
         return true;
     }
-
+    @JsonIgnore
     @Override
     public boolean isEnabled() {
-        return true;
+        return getActive()  ;
     }
 
     public void setUsername(String username) {
         this.username = username;
     }
-
+    @JsonIgnore
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return null;
     }
-
+    @JsonIgnore
     public String getPassword() {
         return password;
     }
@@ -153,7 +155,7 @@ public class User implements UserDetails {
     public void setActive(boolean active) {
         this.active = active;
     }
-
+    @JsonIgnore
     public List<Role> getRoles() {
         return roles;
     }
