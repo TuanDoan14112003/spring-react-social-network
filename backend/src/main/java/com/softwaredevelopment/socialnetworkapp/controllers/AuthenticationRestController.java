@@ -26,11 +26,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class AuthenticationRestController {
 
-    AuthenticationManager authenticationManager;
-    UserRepository userRepository;
-    RoleRepository roleRepository;
-    PasswordEncoder encoder;
-    JwtUtils jwtUtils;
+    private AuthenticationManager authenticationManager;
+    private UserRepository userRepository;
+    private RoleRepository roleRepository;
+    private PasswordEncoder encoder;
+    private JwtUtils jwtUtils;
 
     @Autowired
     public AuthenticationRestController(AuthenticationManager authenticationManager,UserRepository userRepository,RoleRepository roleRepository, PasswordEncoder encoder, JwtUtils jwtUtils) {
