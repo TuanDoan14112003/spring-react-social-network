@@ -1,6 +1,8 @@
 package com.softwaredevelopment.socialnetworkapp.model.authentication;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.softwaredevelopment.socialnetworkapp.model.post.Post;
+
 import jakarta.persistence.*;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -46,6 +48,9 @@ public class User implements UserDetails {
                 inverseJoinColumns = @JoinColumn(name = "role"))
     private List<Role> roles;
 
+
+    @OneToMany(mappedBy = "author", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Post> posts;
 
     public User() {
     }

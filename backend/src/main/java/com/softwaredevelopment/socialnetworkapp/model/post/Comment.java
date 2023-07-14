@@ -16,12 +16,16 @@ public class Comment {
     private long id;
 
     @ManyToOne
-    @JoinColumn(name="account_id")
+    @JoinColumn(name = "account_id")
     private User author;
 
     @ManyToOne
-    @JoinColumn(name="post_id")
+    @JoinColumn(name = "post_id")
     private Post post;
+
+    @ManyToOne
+    @JoinColumn(name = "parent_comment_id")
+    private Comment parentComment;
 
     @Column(name = "content")
     private String content;
@@ -64,6 +68,10 @@ public class Comment {
         return post;
     }
 
+    public Comment getParentComment() {
+        return parentComment;
+    }
+
     public String getContent() {
         return content;
     }
@@ -88,6 +96,10 @@ public class Comment {
         this.post = post;
     }
 
+    public void setParentComment(Comment parentComment) {
+        this.parentComment = parentComment;
+    }
+
     public void setContent(String content) {
         this.content = content;
     }
@@ -103,15 +115,13 @@ public class Comment {
     @Override
     public String toString() {
         return "{" +
-            " id='" + getId() + "'" +
-            ", author='" + getAuthor() + "'" +
-            ", post='" + getPost() + "'" +
-            ", content='" + getContent() + "'" +
-            ", date='" + getDate() + "'" +
-            ", likes='" + getLikes() + "'" +
-            "}";
+                " id='" + getId() + "'" +
+                ", author='" + getAuthor() + "'" +
+                ", post='" + getPost() + "'" +
+                ", content='" + getContent() + "'" +
+                ", date='" + getDate() + "'" +
+                ", likes='" + getLikes() + "'" +
+                "}";
     }
-
-    
 
 }

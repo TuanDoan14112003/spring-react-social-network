@@ -1,6 +1,7 @@
 package com.softwaredevelopment.socialnetworkapp.model.post;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 import com.softwaredevelopment.socialnetworkapp.model.authentication.User;
@@ -31,6 +32,12 @@ public class Post {
     @Column(name = "likes")
     private int likes;
 
+    @OneToMany(mappedBy = "post", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Reaction> reactions = new ArrayList<>();
+
+    @OneToMany(mappedBy = "post", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Comment> comments = new ArrayList<>();
+
     public Post() {
     }
 
@@ -49,7 +56,6 @@ public class Post {
         this.date = date;
         this.likes = likes;
     }
-
 
     public long getId() {
         return id;
@@ -114,9 +120,12 @@ public class Post {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Post post)) return false;
-        return id == post.id && likes == post.likes && author.equals(post.author) && content.equals(post.content) && medias.equals(post.medias) && date.equals(post.date);
+        if (this == o)
+            return true;
+        if (!(o instanceof Post post))
+            return false;
+        return id == post.id && likes == post.likes && author.equals(post.author) && content.equals(post.content)
+                && medias.equals(post.medias) && date.equals(post.date);
     }
 
 }
