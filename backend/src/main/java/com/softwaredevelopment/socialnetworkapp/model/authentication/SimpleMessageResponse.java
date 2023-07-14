@@ -1,4 +1,4 @@
-package com.softwaredevelopment.socialnetworkapp.model;
+package com.softwaredevelopment.socialnetworkapp.model.authentication;
 
 
 public class SimpleMessageResponse {

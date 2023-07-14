@@ -1,7 +1,8 @@
 package com.softwaredevelopment.socialnetworkapp.services;
 
+import com.softwaredevelopment.socialnetworkapp.model.authentication.User;
 import com.softwaredevelopment.socialnetworkapp.repositories.UserRepository;
-import com.softwaredevelopment.socialnetworkapp.model.User;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;

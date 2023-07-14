@@ -2,6 +2,10 @@ package com.softwaredevelopment.socialnetworkapp.controllers;
 
 
 import com.softwaredevelopment.socialnetworkapp.model.*;
+import com.softwaredevelopment.socialnetworkapp.model.authentication.LogInRequest;
+import com.softwaredevelopment.socialnetworkapp.model.authentication.SignUpRequest;
+import com.softwaredevelopment.socialnetworkapp.model.authentication.SimpleMessageResponse;
+import com.softwaredevelopment.socialnetworkapp.model.authentication.User;
 import com.softwaredevelopment.socialnetworkapp.repositories.RoleRepository;
 import com.softwaredevelopment.socialnetworkapp.repositories.UserRepository;
 import com.softwaredevelopment.socialnetworkapp.utils.JwtUtils;

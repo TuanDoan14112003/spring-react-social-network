@@ -4,7 +4,6 @@ package com.softwaredevelopment.socialnetworkapp.utils;
 import java.security.Key;
 import java.util.Date;
 
-import com.softwaredevelopment.socialnetworkapp.model.User;
 import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletRequest;
 
@@ -15,6 +14,7 @@ import org.springframework.http.ResponseCookie;
 import org.springframework.stereotype.Component;
 import org.springframework.web.util.WebUtils;
 
+import com.softwaredevelopment.socialnetworkapp.model.authentication.User;
 
 import io.jsonwebtoken.*;
 import io.jsonwebtoken.io.Decoders;
