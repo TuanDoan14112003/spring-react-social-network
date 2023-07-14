@@ -30,7 +30,7 @@ public class Reaction {
     @Column(name = "type")
     private ReactionType type;
 
-    @Column(name = "date")
+    @Column(name = "create_at")
     private LocalDate date;
     
     

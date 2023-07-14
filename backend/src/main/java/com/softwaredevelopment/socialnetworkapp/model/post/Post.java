@@ -26,7 +26,7 @@ public class Post {
     @Column(name = "medias")
     private List<String> medias;
 
-    @Column(name = "date")
+    @Column(name = "create_at")
     private LocalDate date;
 
     @Column(name = "likes")

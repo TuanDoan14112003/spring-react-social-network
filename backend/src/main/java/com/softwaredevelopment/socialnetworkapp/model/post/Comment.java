@@ -30,7 +30,7 @@ public class Comment {
     @Column(name = "content")
     private String content;
 
-    @Column(name = "date")
+    @Column(name = "create_at")
     private LocalDate date;
 
     @Column(name = "likes")
