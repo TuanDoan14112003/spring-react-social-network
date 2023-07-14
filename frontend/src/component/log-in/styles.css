@@ -180,4 +180,6 @@
 }
 .authentication-choice-button {
   background-color: #615dfa !important;
+  transition-property: background-color;
+  transition-duration: 500ms;
 }
