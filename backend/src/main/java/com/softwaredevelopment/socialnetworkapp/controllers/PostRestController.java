@@ -15,7 +15,7 @@ import com.softwaredevelopment.socialnetworkapp.model.post.Post;
 import com.softwaredevelopment.socialnetworkapp.services.PostService;
 
 @RestController
-@RequestMapping("/api/posts")
+@RequestMapping("/posts")
 public class PostRestController {
     private final PostService postService;
 

@@ -16,7 +16,7 @@ import com.softwaredevelopment.socialnetworkapp.model.post.Comment;
 import com.softwaredevelopment.socialnetworkapp.services.CommentService;
 
 @RestController
-@RequestMapping("/api/comment")
+@RequestMapping("/comment")
 public class CommentRestController {
     private final CommentService commentService;
 
@@ -84,6 +84,4 @@ public class CommentRestController {
         this.commentService.createComment(comment);
         return ResponseEntity.ok("Comment has been created");
     }
-
-
 }

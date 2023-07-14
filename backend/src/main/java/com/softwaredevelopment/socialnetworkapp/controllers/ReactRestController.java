@@ -4,7 +4,6 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -17,7 +16,7 @@ import com.softwaredevelopment.socialnetworkapp.model.post.Reaction;
 import com.softwaredevelopment.socialnetworkapp.services.ReactionService;
 
 @RestController
-@RequestMapping("/api/react")
+@RequestMapping("/react")
 public class ReactRestController {
     private final ReactionService reactionService;
 
@@ -91,14 +90,5 @@ public class ReactRestController {
     public ResponseEntity<String> createReaction(@RequestBody Reaction reaction) {
         this.reactionService.createReaction(reaction);
         return ResponseEntity.ok("Reaction has been created");
-    }
-
-
-
-
-
-
-
-
-    
+    }    
 }
