@@ -152,6 +152,8 @@
   border-right: none !important;
   color: #fff;
   border-radius: 10px 0px 0px 10px;
+  transition-property: background-color;
+  transition-duration: 500ms;
 }
 .authentication-register-button {
   width: 10vw;
@@ -165,6 +167,8 @@
   border: 1px solid #fff;
   border-left: none !important;
   border-radius: 0 10px 10px 0;
+  transition-property: background-color;
+  transition-duration: 500ms;
 }
 .authentication-register-button:hover {
   cursor: pointer;
