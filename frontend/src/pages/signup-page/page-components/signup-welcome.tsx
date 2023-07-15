@@ -1,7 +1,6 @@
 /* eslint-disable @typescript-eslint/restrict-template-expressions */
 import { useState } from "react";
 import Logo from "../../../assets/icons/logo.svg";
-import "./styles.css";
 export default function SignupWelcome() {
     const [choiceMode, setChoiceMode] = useState(2);
     return (
