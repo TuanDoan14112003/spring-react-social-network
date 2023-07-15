@@ -1,8 +1,6 @@
 package com.softwaredevelopment.socialnetworkapp.model;
 
 
-import java.util.Set;
-
 public class SignUpRequest {
 
     private String username;
