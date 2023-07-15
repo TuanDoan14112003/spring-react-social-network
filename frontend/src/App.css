@@ -1,3 +1,4 @@
+
 #root {
   text-align: center;
 }
@@ -5,4 +6,10 @@
 
 
 
+* {
+  box-sizing: border-box;
+  font-size: 14px;
+  font-weight: 400;
+  font-family: "Rajdhani", sans-serif;
+}
 
