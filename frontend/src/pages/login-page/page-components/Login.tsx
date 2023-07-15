@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { Checkbox, TextField } from "@mui/material";
-import GoogleIcon from "../../assets/icons/google.svg";
-import TwitterIcon from "../../assets/icons/twitter.svg";
-import FacebookIcon from "../../assets/icons/facebook.svg";
+import GoogleIcon from "../../../assets/icons/google.svg";
+import TwitterIcon from "../../../assets/icons/twitter.svg";
+import FacebookIcon from "../../../assets/icons/facebook.svg";
 import "./styles.css";
 function Login() {
   const [email, setEmail] = useState("");
