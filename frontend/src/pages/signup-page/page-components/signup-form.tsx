@@ -54,7 +54,7 @@ export default function SignupForm() {
     }
 
     return (
-        <Card style={{ borderRadius: 50, width: "35%", }}>
+        <Card style={{ borderRadius: 50, width: "30%", marginRight: "2.5%" }}>
             <CardContent style={{ marginLeft: "10%", marginRight: "10%", marginTop: "9%" }}>
                 <Typography variant="h6"
                     sx={{

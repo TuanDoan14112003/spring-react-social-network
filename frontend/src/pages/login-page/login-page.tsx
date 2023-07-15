@@ -1,11 +1,9 @@
-import React from "react";
-import SignupForm from "./page-components/signup-form";
-import SignupWelcome from "./page-components/signup-welcome";
-import background from "../../assets/images/background.png";
+import React from 'react';
+import Login from './page-components/Login';
+import LoginWelcome from './page-components/LoginWelcome';
+import background from '../../assets/images/background.png';
 
-
-
-export default function SignupPage() {
+export default function LoginPage() {
     return (
         <div style={{
             background: `url(${background})`,
@@ -21,16 +19,14 @@ export default function SignupPage() {
                 width: '100%',
                 display: 'flex',
                 flexDirection: 'row',
-                justifyContent: 'space-between',
+                justifyContent: 'space-around',
             }}>
-                <div style={{
-                    marginTop: "7%"
-                }}>
-                    <SignupWelcome />
+                <div style={{ marginRight: "30%" }}>
+                    <LoginWelcome />
                 </div>
-                <SignupForm />
+                <Login />
             </div>
-
         </div>
+
     )
 }
