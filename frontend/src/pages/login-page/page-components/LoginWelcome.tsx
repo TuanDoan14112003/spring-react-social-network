@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/restrict-template-expressions */
 import { useState } from "react";
-import Logo from "../../assets/icons/logo.svg";
+import Logo from "../../../assets/icons/logo.svg";
 import "./styles.css";
 function LoginWelcome() {
   const [choiceMode, setChoiceMode] = useState(1);
