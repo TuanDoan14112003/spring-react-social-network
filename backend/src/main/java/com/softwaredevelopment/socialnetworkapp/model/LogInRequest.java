@@ -20,4 +20,12 @@ public class LogInRequest {
     public void setPassword(String password) {
         this.password = password;
     }
+
+    public LogInRequest() {
+    }
+
+    public LogInRequest(String email, String password) {
+        this.email = email;
+        this.password = password;
+    }
 }
