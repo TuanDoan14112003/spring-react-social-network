@@ -23,14 +23,40 @@ function Login() {
 
       <div className="login-information-container">
         <TextField
-          sx={{ marginBottom: "30px" }}
+          sx={{
+            marginBottom: "10%",
+            "& label.Mui-focused": {
+              color: "#AFB0C0", // Change the label color when focused
+            },
+            "& .MuiOutlinedInput-root": {
+              "&:hover fieldset": {
+                borderColor: "", // Change the border color on hover
+              },
+              "&.Mui-focused fieldset": {
+                borderColor: "#AFB0C0", // Change the border color when focused
+              },
+            },
+          }}
           label="Email"
           defaultValue="Email"
           value={email}
           onChange={(event) => setEmailChange(event.target.value)}
         />
         <TextField
-          sx={{ marginBottom: "20px" }}
+          sx={{
+            marginBottom: "10%",
+            "& label.Mui-focused": {
+              color: "#AFB0C0", // Change the label color when focused
+            },
+            "& .MuiOutlinedInput-root": {
+              "&:hover fieldset": {
+                borderColor: "", // Change the border color on hover
+              },
+              "&.Mui-focused fieldset": {
+                borderColor: "#AFB0C0", // Change the border color when focused
+              },
+            },
+          }}
           label="Password"
           type="password"
           value={password}
@@ -41,7 +67,7 @@ function Login() {
       <div className="login-funtion">
         <div className="remember-check-box-container">
           <Checkbox
-            sx={{ marginLeft: "-12px" }}
+            sx={{ marginLeft: "-8%" }}
             //   checked={checked}
             //   onChange={handleChange}
             inputProps={{ "aria-label": "controlled" }}
