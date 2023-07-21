@@ -18,6 +18,7 @@ const ImageButton: React.FC<ImageButtonProps> = ({
         backgroundPosition: 'center',
         width: '20.75rem',
         height: '13rem',
+        borderRadius: '1.5rem',
     };
     return (
         <Card style={buttonStyle} onClick={eventHandler}>
