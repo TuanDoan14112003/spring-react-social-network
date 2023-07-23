@@ -7,6 +7,8 @@ import {
 } from "react-router-dom";
 import LoginPage from "../pages/login-page/login-page";
 import SingupPage from "../pages/signup-page/signup-page";
+import GenrePage from "../pages/genre-select-page/genre-select-page";
+
 
 
 
@@ -16,6 +18,7 @@ export default function Navigation() {
             <Routes>
                 <Route path="/signup" element={<SingupPage />} />
                 <Route path="/login" element={<LoginPage />} />
+                <Route path="/genre" element={<GenrePage />} />
             </Routes>
         </Router>
     );
