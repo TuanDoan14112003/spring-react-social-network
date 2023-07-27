@@ -1,5 +1,6 @@
 import { useState, ChangeEvent } from 'react';
 import ModeIcon from '@mui/icons-material/Mode';
+import AddAPhotoIcon from '@mui/icons-material/AddAPhoto';
 import TextField from '@mui/material/TextField';
 import Fab from '@mui/material/Fab/Fab';
 import CommonUtils from '../CommonUtils';
