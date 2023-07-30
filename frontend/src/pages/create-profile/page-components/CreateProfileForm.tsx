@@ -1,19 +1,30 @@
-import { useState, ChangeEvent } from 'react';
-import ModeIcon from '@mui/icons-material/Mode';
-import AddAPhotoIcon from '@mui/icons-material/AddAPhoto';
-import TextField from '@mui/material/TextField';
-import Fab from '@mui/material/Fab/Fab';
-import CommonUtils from '../CommonUtils';
-import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
-import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
-import Logo from '../../../assets/icons/logo.svg';
-import CreateIcon from '@mui/icons-material/Create';
-import { Avatar, Icon } from '@mui/material';
-import Button from '@mui/material/Button/Button';
-import './style.css';
+import { useState, ChangeEvent } from "react";
+import ModeIcon from "@mui/icons-material/Mode";
+import AddAPhotoIcon from "@mui/icons-material/AddAPhoto";
+import TextField from "@mui/material/TextField";
+import Fab from "@mui/material/Fab/Fab";
+import CommonUtils from "../CommonUtils";
+import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
+import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
+import Logo from "../../../assets/icons/logo.svg";
+import CreateIcon from "@mui/icons-material/Create";
+import { Avatar, Icon } from "@mui/material";
+import Button from "@mui/material/Button/Button";
+import "./style.css";
+import ChoiceDialog from "../../../components/dialog/ChoiceDialog";
+import ClickoutListener from "../../../components/click-out-listener/ClickoutListener";
 
 function CreateProfileForm() {
+  const title = "Gender";
+  const options = [
+    "Male",
+    "Female",
+    "Non-Binary",
+    "Prefer not to say",
+  ];
   const [formAvatar, setAvatar] = useState(Logo);
+  const [genderValue, changeGenderValue] = useState("");
+  const [genderPopUp, setGenderPopUp] = useState(false);
   const handleOnChangeAvatar = (event: ChangeEvent<HTMLInputElement>) => {
     if (!event.target.files) {
       return;
@@ -27,10 +38,22 @@ function CreateProfileForm() {
 
   return (
     <div className="create-profile-container">
+      {genderPopUp && (
+        <ChoiceDialog
+          title={title}
+          options={options}
+          isComfirmButton={false}
+          closePopUp={() => setGenderPopUp(false)}
+          onValueChange={(value: string) => changeGenderValue(value)}
+        />
+      )}
+      {genderPopUp && (
+        <ClickoutListener onClick={() => setGenderPopUp(false)} />
+      )}
       <h1 className="create-profile-header-text"> Create Your Profile</h1>
-      <label htmlFor="upload-photo">
+      <label htmlFor="upload-photo">  
         <input
-          style={{ display: 'none' }}
+          style={{ display: "none" }}
           type="file"
           id="upload-photo"
           name="upload-photo"
@@ -41,10 +64,11 @@ function CreateProfileForm() {
           aria-label="add"
           size="small"
           sx={{
-            backgroundColor: '#615dfa',
-            position: 'absolute',
-            marginTop: '90px',
-            marginLeft: '20px',
+            backgroundColor: "#615dfa",
+            position: "absolute",
+            marginTop: "90px",
+            marginLeft: "20px",
+            zIndex: "2",
           }}
         >
           <CreateIcon />
@@ -65,19 +89,19 @@ function CreateProfileForm() {
         <TextField
           className="profile-name"
           sx={{
-            borderRadius: '120px',
-            marginBottom: '10%',
+            borderRadius: "120px",
+            marginBottom: "10%",
 
-            '& label.Mui-focused': {
-              color: '#AFB0C0',
+            "& label.Mui-focused": {
+              color: "#AFB0C0",
               // Change the label color when focused
             },
-            '& .MuiOutlinedInput-root': {
-              '&:hover fieldset': {
-                borderColor: '', // Change the border color on hover
+            "& .MuiOutlinedInput-root": {
+              "&:hover fieldset": {
+                borderColor: "", // Change the border color on hover
               },
-              '&.Mui-focused fieldset': {
-                borderColor: '#AFB0C0', // Change the border color when focused
+              "&.Mui-focused fieldset": {
+                borderColor: "#AFB0C0", // Change the border color when focused
               },
             },
           }}
@@ -86,16 +110,16 @@ function CreateProfileForm() {
         />
         <TextField
           sx={{
-            marginBottom: '10%',
-            '& label.Mui-focused': {
-              color: '#AFB0C0', // Change the label color when focused
+            marginBottom: "10%",
+            "& label.Mui-focused": {
+              color: "#AFB0C0", // Change the label color when focused
             },
-            '& .MuiOutlinedInput-root': {
-              '&:hover fieldset': {
-                borderColor: '', // Change the border color on hover
+            "& .MuiOutlinedInput-root": {
+              "&:hover fieldset": {
+                borderColor: "", // Change the border color on hover
               },
-              '&.Mui-focused fieldset': {
-                borderColor: '#AFB0C0', // Change the border color when focused
+              "&.Mui-focused fieldset": {
+                borderColor: "#AFB0C0", // Change the border color when focused
               },
             },
           }}
@@ -104,35 +128,37 @@ function CreateProfileForm() {
         />
         <TextField
           sx={{
-            marginBottom: '10%',
-            '& label.Mui-focused': {
-              color: '#AFB0C0', // Change the label color when focused
+            marginBottom: "10%",
+            "& label.Mui-focused": {
+              color: "#AFB0C0", // Change the label color when focused
             },
-            '& .MuiOutlinedInput-root': {
-              '&:hover fieldset': {
-                borderColor: '', // Change the border color on hover
+            "& .MuiOutlinedInput-root": {
+              "&:hover fieldset": {
+                borderColor: "", // Change the border color on hover
               },
-              '&.Mui-focused fieldset': {
-                borderColor: '#AFB0C0', // Change the border color when focused
+              "&.Mui-focused fieldset": {
+                borderColor: "#AFB0C0", // Change the border color when focused
               },
             },
           }}
           label="Gender"
           placeholder="Your Gender"
+          onClick={() => setGenderPopUp(true)}
+          value={genderValue}
         />
         <TextField
           sx={{
-            marginBottom: '10%',
-            '& label.Mui-focused': {
-              color: '#AFB0C0',
+            marginBottom: "10%",
+            "& label.Mui-focused": {
+              color: "#AFB0C0",
               // Change the label color when focused
             },
-            '& .MuiOutlinedInput-root': {
-              '&:hover fieldset': {
-                borderColor: '', // Change the border color on hover
+            "& .MuiOutlinedInput-root": {
+              "&:hover fieldset": {
+                borderColor: "", // Change the border color on hover
               },
-              '&.Mui-focused fieldset': {
-                borderColor: '#AFB0C0', // Change the border color when focused
+              "&.Mui-focused fieldset": {
+                borderColor: "#AFB0C0", // Change the border color when focused
               },
             },
           }}
@@ -143,7 +169,7 @@ function CreateProfileForm() {
         <div className="back-button-container">
           {/* <button className="back-button">Back</button> */}
           <Button
-            sx={{ backgroundColor: '#615dfa' }}
+            sx={{ backgroundColor: "#615dfa" }}
             className="back-button"
             startIcon={<ArrowBackIosIcon />}
             variant="contained"
@@ -155,7 +181,7 @@ function CreateProfileForm() {
         <div className="next-button-container">
           {/* <button className="next-button">Next</button> */}
           <Button
-            sx={{ backgroundColor: '#615dfa' }}
+            sx={{ backgroundColor: "#615dfa" }}
             className="next-button"
             endIcon={<ArrowForwardIosIcon />}
             variant="contained"
