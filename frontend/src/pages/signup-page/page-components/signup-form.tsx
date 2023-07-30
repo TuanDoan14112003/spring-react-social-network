@@ -106,7 +106,7 @@ export default function SignupForm() {
                     InputLabelProps={{ style: { fontFamily: "Rajdhani", fontWeight: 700 } }}
                     sx={{
                         my: 2, '& label.Mui-focused': {
-                            color: "#AFB0C0", // Change the label color when focused
+                            color: "#AFB0C0"    , // Change the label color when focused
                         },
                         '& .MuiOutlinedInput-root': {
                             '&:hover fieldset': {

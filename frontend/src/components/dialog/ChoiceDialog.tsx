@@ -5,7 +5,19 @@ import { Radio } from "@mui/material";
 import { useState } from "react";
 import "../styles.css";
 
-function ChoiceDialog({ title, options }: { title?: string; options: any[] }) {
+function ChoiceDialog({
+  title,
+  options,
+  isComfirmButton,
+  closePopUp,
+  onValueChange,
+}: {
+  title?: string;
+  options: any[];
+  isComfirmButton: boolean;
+  closePopUp: () => void;
+  onValueChange: (value: string) => void;
+}) {
   const [dialogState, changeDialogState] = useState(false);
   const hideInformationDialog = () => {
     if (value) changeDialogState(true);
@@ -13,6 +25,8 @@ function ChoiceDialog({ title, options }: { title?: string; options: any[] }) {
   const [value, changeValue] = useState("");
   const handleChange = (option: string) => {
     changeValue(option);
+    onValueChange(option);
+    closePopUp();
   };
   return (
     <div
@@ -34,12 +48,14 @@ function ChoiceDialog({ title, options }: { title?: string; options: any[] }) {
           );
         })}
       </div>
-      <button
-        className="choice-dialog-confirm-button"
-        onClick={hideInformationDialog}
-      >
-        Confirm
-      </button>
+      {isComfirmButton && (
+        <button
+          className="choice-dialog-confirm-button"
+          onClick={hideInformationDialog}
+        >
+          Confirm
+        </button>
+      )}
     </div>
   );
 }
