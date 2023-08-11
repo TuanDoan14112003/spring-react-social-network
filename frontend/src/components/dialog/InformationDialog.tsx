@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/restrict-template-expressions */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
-import React, { useState } from "react";
-import "../styles.css";
+import { useState } from "react";
+import "./styles.css";
 
 function InformationDialog({
   iconSrc,
