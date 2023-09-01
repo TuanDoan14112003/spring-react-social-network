@@ -24,7 +24,11 @@ export default function SignupPage() {
                 justifyContent: 'space-between',
             }}>
                 <div style={{
-                    marginTop: "7%"
+                    flex: 1,
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: 'center',
+                    alignItems: 'start',
                 }}>
                     <SignupWelcome />
                 </div>

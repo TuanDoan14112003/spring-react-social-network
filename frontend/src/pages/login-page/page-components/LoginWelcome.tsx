@@ -1,9 +1,17 @@
 /* eslint-disable @typescript-eslint/restrict-template-expressions */
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Logo from "../../../assets/icons/logo.svg";
 import "./styles.css";
+import { useNavigate } from "react-router-dom";
+
 function LoginWelcome() {
+  const navigate = useNavigate();
   const [choiceMode, setChoiceMode] = useState(1);
+  useEffect(() => {
+    if (choiceMode == 2) {
+      navigate("/signup");
+    }
+  }, [choiceMode]);
   return (
     <div className="login-welcome-container">
       <img src={Logo} alt="logo" className="login-logo" />
@@ -19,17 +27,15 @@ function LoginWelcome() {
       </div>
       <div className="authentication-button-container">
         <button
-          className={`authentication-login-button ${
-            choiceMode == 1 && "authentication-choice-button"
-          }`}
+          className={`authentication-login-button ${choiceMode == 1 && "authentication-choice-button"
+            }`}
           onClick={() => setChoiceMode(1)}
         >
           Login
         </button>
         <button
-          className={`authentication-register-button ${
-            choiceMode == 2 && "authentication-choice-button"
-          }`}
+          className={`authentication-register-button ${choiceMode == 2 && "authentication-choice-button"
+            }`}
           onClick={() => setChoiceMode(2)}
         >
           Register

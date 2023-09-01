@@ -1,8 +1,16 @@
 /* eslint-disable @typescript-eslint/restrict-template-expressions */
-import { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Logo from "../../../assets/icons/logo.svg";
+import { useNavigate } from "react-router-dom";
+
 export default function SignupWelcome() {
     const [choiceMode, setChoiceMode] = useState(2);
+    const navigate = useNavigate();
+    useEffect(() => {
+        if (choiceMode == 1) {
+            navigate("/login");
+        }
+    }, [choiceMode]);
     return (
         <div className="login-welcome-container">
             <img src={Logo} alt="logo" className="login-logo" />

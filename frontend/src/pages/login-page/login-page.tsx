@@ -21,7 +21,13 @@ export default function LoginPage() {
                 flexDirection: 'row',
                 justifyContent: 'space-around',
             }}>
-                <div style={{ marginRight: "30%" }}>
+                <div style={{ 
+                    flex: 1,
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: 'center',
+                    alignItems: 'start',
+                 }}>
                     <LoginWelcome />
                 </div>
                 <Login />
