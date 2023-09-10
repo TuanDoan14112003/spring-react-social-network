@@ -1,0 +1,58 @@
+.left-bar-container {
+  height: 65vh;
+  width: 12%;
+  padding: 20px;
+  border-radius: 1.25rem;
+  background-color: #ffffff !important;
+  margin-left: 20px;
+}
+.left-bar-log-out {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  height: 10vh;
+  width: 12%;
+  border-radius: 1.25rem;
+  background-color: #ffffff !important;
+  margin-left: 20px;
+  cursor: pointer;
+}
+.left-bar-item-container {
+  padding: 8px 15px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-radius: 7px;
+  margin-bottom: 0.9vh;
+  cursor: pointer;
+}
+.log-out-item-container {
+  margin-bottom: 0px !important;
+  margin-left: 20px;
+  width: calc(100% - 40px);
+}
+.is-hover-left-bar-item {
+  background-color: #ffffff;
+  box-shadow: 3px 5.199999809265137px 40px 0px rgba(94, 92, 154, 0.2);
+}
+.is-hover-left-bar-content {
+  color: #615dfa !important;
+}
+.is-hover-left-bar-icon {
+  filter: brightness(0) saturate(100%) invert(34%) sepia(36%) saturate(4234%)
+    hue-rotate(229deg) brightness(99%) contrast(98%);
+}
+
+.is-choosen-left-bar-item {
+  background-color: #615dfa !important;
+}
+.is-choosen-left-bar-content {
+  color: #ffffff !important;
+}
+.is-choosen-left-bar-icon {
+  filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%)
+    hue-rotate(153deg) brightness(114%) contrast(101%) !important;
+}
+.home-icon-style {
+  fill: #cfd0d9 !important;
+}

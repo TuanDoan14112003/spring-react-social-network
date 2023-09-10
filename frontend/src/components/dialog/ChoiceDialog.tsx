@@ -3,7 +3,7 @@
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import { Radio } from "@mui/material";
 import { useState } from "react";
-import "../styles.css";
+import "./styles.css";
 
 function ChoiceDialog({
   title,

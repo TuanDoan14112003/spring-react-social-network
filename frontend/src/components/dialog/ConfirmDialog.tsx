@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/restrict-template-expressions */
 import { useState } from "react";
-import "../styles.css";
+import "./styles.css";
 
 function ConfirmDialog({
   iconSrc,

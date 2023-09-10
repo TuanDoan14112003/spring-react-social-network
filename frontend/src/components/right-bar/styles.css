@@ -1,0 +1,56 @@
+.side-bar-container {
+  position: fixed;
+  background-color: #fff;
+  width: 5rem;
+  margin-top: 15vh;
+  max-height: 85vh;
+  border-radius: 5px;
+  right: 20px;
+}
+.side-bar-all-user-container {
+  max-height: calc(85vh - 5rem - 30px);
+  overflow: auto;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer and Edge */
+}
+.side-bar-all-user-container::-webkit-scrollbar {
+  width: 0;
+}
+.side-bar-search-friend-text {
+  background-color: #3e3f5e;
+  border-radius: 0.9375rem;
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  position: absolute;
+  top: 2rem;
+  transform: translate(calc(-115px), -5px);
+  color: #ffffff;
+  font-weight: 700;
+  min-width: 110px !important;
+}
+.side-bar-friend-search {
+  position: relative;
+}
+.right-bar-user-status {
+  background-image: url("../../assets/icons/Online.svg");
+  background-size: cover;
+  background-position: center;
+  width: 14px;
+  height: 14px;
+  position: absolute;
+  right: -3px;
+  top: 13px;
+}
+.right-bar-user-container {
+  position: relative;
+  width: 5rem;
+  height: 5.52238rem !important;
+  background-image: url("../../assets/icons/hexagon.svg"),
+    url("../../assets/icons/Avatar.svg");
+
+  background-size: cover;
+  background-position: center;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
