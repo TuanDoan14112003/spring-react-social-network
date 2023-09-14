@@ -1,6 +1,6 @@
 import React from 'react';
-import Login from './page-components/Login';
-import LoginWelcome from './page-components/LoginWelcome';
+import Login from './page-components/login-form';
+import Welcome from "../../components/authentication-navigation/welcome"
 import background from '../../assets/images/background.png';
 
 export default function LoginPage() {
@@ -28,7 +28,7 @@ export default function LoginPage() {
                     justifyContent: 'center',
                     alignItems: 'start',
                  }}>
-                    <LoginWelcome />
+                    <Welcome />
                 </div>
                 <Login />
             </div>

@@ -1,6 +1,6 @@
 import React from "react";
 import SignupForm from "./page-components/signup-form";
-import SignupWelcome from "./page-components/signup-welcome";
+import Welcome from "../../components/authentication-navigation/welcome";
 import background from "../../assets/images/background.png";
 
 
@@ -30,7 +30,7 @@ export default function SignupPage() {
                     justifyContent: 'center',
                     alignItems: 'start',
                 }}>
-                    <SignupWelcome />
+                    <Welcome />
                 </div>
                 <SignupForm />
             </div>

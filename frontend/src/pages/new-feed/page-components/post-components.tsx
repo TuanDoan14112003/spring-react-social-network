@@ -16,7 +16,13 @@ import { ReactComponent as CommentIcon } from '../../../assets/icons/comment.svg
 import { ReactComponent as ShareIcon } from '../../../assets/icons/share.svg';
 import { ReactComponent as MoreIcon } from '../../../assets/icons/more.svg';
 
-export default function PostComponent({ }) {
+
+interface Post {
+    id: number;
+
+
+}
+export default function PostComponent(props: Post) {
     return (
         <Card sx={{ width: "60%", borderRadius: "15px", textAlign: "left" }}>
             <CardHeader
@@ -27,7 +33,7 @@ export default function PostComponent({ }) {
                 }
                 action={
                     <IconButton aria-label="settings">
-                        <SvgIcon component={MoreIcon} viewBox="0 0 24 24" />
+                        <SvgIcon component={MoreIcon} viewBox="0 0 23 7" />
                     </IconButton>
                 }
                 titleTypographyProps={{ fontWeight: 'bold' }}
