@@ -10,6 +10,9 @@ import DialogTitle from '@mui/material/DialogTitle';
 import DialogActions from '@mui/material/DialogActions';
 import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
+import { ReactComponent as SmillingEmoji } from '../../../assets/icons/smilling-emoji-icon.svg';
+import { ReactComponent as ImageIcon } from '../../../assets/icons/photo-icon.svg';
+
 
 
 interface PostUploadDialogProps {
@@ -23,27 +26,14 @@ export default function PostUploadDialog(props: PostUploadDialogProps) {
 
     return (
         <Dialog
-            fullWidth
+            fullWidth={true}
             onClose={onClose}
             open={open}
-            PaperProps={{
-                sx: {
-                    width: "50rem",
-                    maxWidth: "1000rem!important",
-                },
+            style={{
+                width: "100%",
+                height: "100%",
             }}
-            
-            sx={{
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-                "& .MuiDialog-container": {
-                    "& .MuiPaper-root": {
-                        width: "100%",
-                        maxWidth: "500px",  // Set your width here
-                    },
-                },
-            }}>
+        >
             <DialogTitle>
                 <Box sx={{
                     display: "flex",
@@ -81,8 +71,38 @@ export default function PostUploadDialog(props: PostUploadDialogProps) {
                 </Box>
             </DialogContent>
             <DialogActions>
-                <Button onClick={() => { onClose(false) }}>Cancel</Button>
-                <Button onClick={() => { onClose(false) }}>Post</Button>
+                <IconButton>
+                    <SvgIcon component={ImageIcon} viewBox="0 0 29 29" sx={{ color: "#AFB0C0" }} />
+                </IconButton>
+                <IconButton>
+                    <SvgIcon component={SmillingEmoji} viewBox="0 0 40 40" sx={{ color: "#AFB0C0" }} />
+                </IconButton>
+                <Button variant="contained" color="inherit" sx={{ borderRadius: "8px" }} onClick={() => { onClose(false); }}>
+                    <Typography sx={{
+                        color: '#AFB0C0',
+                        fontFamily: 'Rajdhani',
+                        fontSize: '12px',
+                        fontStyle: 'normal',
+                        fontWeight: 700,
+                        lineHeight: 'normal',
+                        textTransform: 'none',
+                    }}>
+                        Discard
+                    </Typography>
+                </Button>
+                <Button variant="contained" color="primary" sx={{ borderRadius: "8px" }}>
+                    <Typography sx={{
+                        color: '#FFF',
+                        fontFamily: 'Rajdhani',
+                        fontSize: '12px',
+                        fontStyle: 'normal',
+                        fontWeight: 700,
+                        lineHeight: 'normal',
+                        textTransform: 'none',
+                    }}>
+                        Post
+                    </Typography>
+                </Button>
             </DialogActions>
 
         </Dialog>

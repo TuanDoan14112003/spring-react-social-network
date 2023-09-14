@@ -8,14 +8,12 @@ import SvgIcon from '@mui/material/SvgIcon/SvgIcon';
 import IconButton from '@mui/material/IconButton/IconButton';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
 import AvatarButton from '../../../components/avatar-button/avatar-button';
-import { ReactComponent as StatusIcon } from '../../../assets/icons/status.svg';
-import { ReactComponent as BlogIcon } from '../../../assets/icons/blog.svg';
-import { ReactComponent as PollIcon } from '../../../assets/icons/poll.svg';
 import { ReactComponent as CameraIcon } from '../../../assets/icons/camera.svg';
 import { ReactComponent as GifIcon } from '../../../assets/icons/gif.svg';
-import { ReactComponent as TagIcon } from '../../../assets/icons/tag.svg';
+
+import { ReactComponent as SmillingEmoji } from '../../../assets/icons/smilling-emoji-icon.svg';
+import { ReactComponent as ImageIcon } from '../../../assets/icons/photo-icon.svg';
 
 
 
@@ -49,7 +47,7 @@ export default function PostUploadBasicComponent(props: PostUploadBasicComponent
                                 onFocus: (e) => e.target.blur(), // Prevent the input from being focused
                             }}
                             sx={{
-                                padding: "0.5rem",
+                                padding: "0.2rem",
                                 paddingLeft: "1rem",
                                 backgroundColor: "#F5F5F5",
                                 borderRadius: "15px",
@@ -75,55 +73,15 @@ export default function PostUploadBasicComponent(props: PostUploadBasicComponent
                     <Grid container spacing={0} width="25%">
                         <Grid item xs={4} display={'flex'} justifyContent={'center'} alignItems={'center'}>
                             <IconButton aria-label="camera">
-                                <SvgIcon component={CameraIcon} viewBox="0 0 24 24" />
+                                <SvgIcon component={ImageIcon} viewBox="0 0 29 29" />
                             </IconButton>
                         </Grid>
                         <Grid item xs={4} display={'flex'} justifyContent={'center'} alignItems={'center'}>
                             <IconButton aria-label="Gif">
-                                <SvgIcon component={GifIcon} viewBox="0 0 24 24" />
-                            </IconButton>
-                        </Grid>
-                        <Grid item xs={4} display={'flex'} justifyContent={'center'} alignItems={'center'}>
-                            <IconButton aria-label="Tag">
-                                <SvgIcon component={TagIcon} viewBox="0 0 24 24" />
+                                <SvgIcon component={SmillingEmoji} viewBox="0 0 40 40" />
                             </IconButton>
                         </Grid>
                     </Grid>
-
-                    {/* <Grid container spacing={0} width="25%">
-                        <Grid item xs={6} display={'flex'} justifyContent={'center'} alignItems={'center'}>
-                            <Button variant="text" color="inherit" >
-                                <Typography sx={{
-                                    color: '#AFB0C0',
-                                    fontFamily: 'Rajdhani',
-                                    fontSize: '12px',
-                                    fontStyle: 'normal',
-                                    fontWeight: 700,
-                                    lineHeight: 'normal',
-                                    textTransform: 'none',
-                                }}>
-                                    Discard
-                                </Typography>
-                            </Button>
-                        </Grid>
-
-                        <Grid item xs={6} display={'flex'} justifyContent={'center'} alignItems={'center'}>
-                            <Button variant="contained" color="primary" size='large' sx={{ borderRadius: "8px" }}>
-                                <Typography sx={{
-                                    color: '#FFF',
-                                    fontFamily: 'Rajdhani',
-                                    fontSize: '12px',
-                                    fontStyle: 'normal',
-                                    fontWeight: 700,
-                                    lineHeight: 'normal',
-                                    textTransform: 'none',
-                                }}>
-                                    Post
-                                </Typography>
-                            </Button>
-                        </Grid>
-
-                    </Grid> */}
                 </Box>
 
             </CardActions>
