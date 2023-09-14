@@ -10,7 +10,7 @@ function Login() {
   const [password, setPassword] = useState("");
 
   const setEmailChange = (emailValue: string) => {
-    setEmail(emailValue);
+    setUsername(emailValue);
   };
 
   const setPasswordChange = (passwordValue: string) => {
@@ -150,7 +150,9 @@ function Login() {
         width: "100%", height: "54px", borderRadius: 3, backgroundColor: "#615DFA", my: 2, "&:hover": {
           backgroundColor: "#303276",
         }
-      }} onClick={() => { }}>
+      }} onClick={() => {
+        console.log("Login clicked");
+       }}>
         <Typography sx={{
           color: '#FFF',
           fontFamily: 'Rajdhani',

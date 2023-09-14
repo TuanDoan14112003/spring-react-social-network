@@ -1,20 +1,24 @@
 import { Box, Grid } from '@mui/material';
 import React, { useState, useEffect } from 'react';
 import Header from '../../components/header/header';
-import PostUploadComponent from './page-components/post-upload-component';
+import PostUploadDialog from './page-components/post-upload-dialog';
+import PostUploadBasicComponent from './page-components/post-upload-basic-component';
 import PostComponent from './page-components/post-components';
 import CalendarCard from './page-components/calendar-card';
 import WatchTogetherCard from './page-components/watch-together-card';
 import MoviePlanCard from './page-components/movie-plan-card';
 import NavCard from './page-components/nav-card';
 import NewsFeedIntroCard from './page-components/news-feed-intro-card';
+import Dialog from '@mui/material/Dialog';
 
 
 export default function NewFeed() {
+
+    const [isPostUploadDialogOpen, setIsPostUploadDialogOpen] = useState(false);
+
     return (
         <Box>
             <Header />
-
             <Box sx={{
                 backgroundColor: "#F5F5F5",
                 width: "100%",
@@ -71,7 +75,7 @@ export default function NewFeed() {
                                     alignItems: "center",
                                     justifyContent: "center",
                                 }}>
-                                    <PostUploadComponent />
+                                    <PostUploadBasicComponent onClose={setIsPostUploadDialogOpen} open={isPostUploadDialogOpen}/>
                                 </Box>
                                 <Box sx={{
                                     width: "100%",
@@ -104,7 +108,7 @@ export default function NewFeed() {
 
                 </Box>
             </Box>
-
+            <PostUploadDialog onClose={setIsPostUploadDialogOpen} open={isPostUploadDialogOpen}/>            
         </Box>
     );
 }
